@@ -1,0 +1,928 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
+@font-face {
+    font-family: 'Manga Temple';
+    src: url('fonts/MangaTempleBold.eot');
+    src: url('fonts/MangaTempleBold.eot?#iefix') format('embedded-opentype'), url('fonts/MangaTempleBold.woff2') format('woff2'), url('fonts/MangaTempleBold.woff') format('woff'), url('fonts/MangaTempleBold.ttf') format('truetype'), url('fonts/MangaTempleBold.svg#MangaTempleBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manga Temple';
+    src: url('fonts/MangaTemple.eot');
+    src: url('fonts/MangaTemple.eot?#iefix') format('embedded-opentype'), url('fonts/MangaTemple.woff2') format('woff2'), url('fonts/MangaTemple.woff') format('woff'), url('fonts/MangaTemple.ttf') format('truetype'), url('fonts/MangaTemple.svg#MangaTemple') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gagalin';
+    src: url('fonts/Gagalin-Regular.woff2');
+    src: url('fonts/Gagalin-Regular.woff2') format('embedded-opentype'), url('fonts/Gagalin-Regular.woff2') format('woff2'), url('fonts/Hirosh.woff') format('woff'), url('fonts/Hirosh.ttf') format('truetype'), url('fonts/Hirosh.svg#Hirosh') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Gagalin";
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #111529;
+    color: #fff;
+}
+
+a,
+button {
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.scrolltotop {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #9a1538;
+    background: linear-gradient( rgba(255, 53, 39, 1) 100%);
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    position: fixed;
+    right: 30px;
+    bottom: 25px;
+    display: none;
+    animation: lab_top_up 5s linear infinite;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid #FF3527;
+    z-index: 1;
+}
+
+.scrolltotop i {
+    color: #ffff;
+}
+
+@keyframes lab_top_up {
+    0% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.pluse,
+.pluse2 {
+    position: relative;
+    top: 10px;
+    left: -8px;
+    z-index: -1;
+}
+
+.pluse::before,
+.pluse2::before {
+    width: 40px;
+    height: 40px;
+}
+
+.pluse::after,
+.pluse::before,
+.pluse2::after,
+.pluse2::before {
+    background: rgb(255, 228, 35);
+    background: linear-gradient(176deg, rgba(255, 228, 35, 1) 0%, rgba(255, 130, 37, 1) 51%, rgba(255, 53, 39, 1) 100%);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.pluse::after,
+.pluse2::after {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+
+.pluse::before {
+    -webkit-animation: pluse_animate 2.5s infinite linear;
+    animation: pluse_animate 2.5s infinite linear;
+}
+
+.pluse2::before {
+    -webkit-animation: pluse_animate 3s infinite linear;
+    animation: pluse_animate 3s infinite linear;
+}
+
+@keyframes pluse_animate {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(2);
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/*==== nev area start===== */
+
+header {
+    padding: 25px 30px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(27px);
+    position: fixed;
+    margin: auto;
+    width: 99%;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+header .container {
+    max-width: 99% !important;
+    margin: auto;
+}
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* .logo {
+    max-width: 300px;
+    display: inline-block;
+    margin-right: 50px;
+} */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item ul li {
+    margin-left: 10px;
+}
+
+.menu-item ul li a {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    text-align: center;
+}
+
+.menu-item ul li a:hover {
+    color: #9a1538;
+}
+
+.active a {
+    color: #9a1538 !important;
+}
+
+.menu-icon ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-icon ul li a {
+    transition: .3s;
+}
+
+.menu-icon ul li a:hover {
+    transform: scale(1.2);
+}
+
+.section-gap {
+    display: block;
+    padding: 10px;
+}
+
+.menu-bar {
+    display: none;
+}
+
+.menu-bar a {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.s-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.s-icon a {
+    display: inline-block;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+
+.s-icon a:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.mobile-icon-ss {
+    display: none;
+}
+
+/*==== nev area end===== */
+
+/*==== sticky-nev start=== */
+
+.fixed-menu {
+    position: fixed;
+    -webkit-animation: slide-down 0.5s !important;
+    animation: slide-down 0.5s !important;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    z-index: 250;
+    -webkit-transition: .10s;
+    -o-transition: .10s;
+    transition: .10s;
+    z-index: 99999999999999;
+}
+
+@-webkit-keyframes slide-down {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*==== sticky-nev end=== */
+
+/* ====offcanvas manu start===== */
+
+.offcanvas-header {
+    background-color: #01080a;
+    border-bottom: 1px solid #FF8A00;
+}
+
+.offcanvas-header h5 img {
+    max-width: 100px;
+}
+
+.offcanvas-body {
+    background-color: #080808;
+    padding: 0px !important;
+}
+
+.clloss-x {
+    font-size: 25px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.clloss-x:hover {
+    color: #fff !important;
+}
+
+.offcanvas-start {
+    top: 0;
+    left: 0;
+    width: 340px;
+    z-index: 11111111111111;
+}
+
+.mobile-menu-item ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    padding: 15px 20px;
+    display: block;
+    transition: .2s;
+    text-transform: uppercase;
+}
+
+.mobile-menu-item ul li a:hover {
+    background-color: #FF8A00;
+    color: #fff;
+}
+
+.m-active {
+    background: #FF8A00;
+    color: #fff !important;
+}
+
+.mobile-menu-item ul li a i {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+/* ====offcanvas manu end===== */
+
+/* =====hero-area-start===== */
+
+.hero-area {
+    background-image: url(img/hero-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+    padding: 40px 0 0px;
+}
+
+.hero-title h2 {
+    color: #050101;
+    font-family: Gagalin;
+    font-size: 118px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    /* 129.8px */
+    text-transform: uppercase;
+    margin-top: 180px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hero-area p {
+    color: var(--Secondary, #EBEBEB);
+    text-align: center;
+    font-family: Gagalin;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 110%;
+    /* 17.6px */
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.hero-title ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hero-title ul li a {
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 14px */
+    text-transform: capitalize;
+    padding: 18px 20px;
+    transition: .3s;
+    text-align: center;
+    width: 180px;
+    ;
+    border-radius: 5px;
+    display: block;
+}
+
+.hero-title ul li a:hover {
+    transform: scale(1.1);
+}
+
+.hero-title ul li:first-of-type a {
+    border-radius: 5px;
+    background: #FF8A00;
+    color: #000;
+}
+
+.hero-title ul li:last-of-type a {
+    border-radius: 5px;
+    padding: 15px;
+    color: #FF8A00;
+    border: 2px solid #FF8A00;
+}
+
+/* about area start */
+
+.about-area {
+    padding: 100px 0 60px 0;
+    background-color: #111529;
+    position: relative;
+}
+
+.about-rain {
+    position: absolute;
+    bottom: 80px;
+    z-index: 99;
+    left: 0px;
+}
+
+.about-right {
+    padding-right: 20px;
+    text-align: right;
+}
+
+.about-left h3 {
+    color: #9a1538;
+    font-family: Gagalin;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    /* 73.7px */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about-left h3 span {
+    font-family: "Gagalin";
+}
+
+.about-left p {
+    color: #9a1538;
+    font-family: "Gagalin";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    /* 28.8px */
+    margin-bottom: 30px;
+}
+
+.about-left ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-left ul li a {
+    color: #180D00;
+    text-align: center;
+    font-family: Gagalin;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 14px */
+    text-transform: uppercase;
+    width: 200px;
+    display: block;
+    padding: 18px 20px;
+    text-align: center;
+    border-radius: 60px;
+    border-bottom: 1px solid #F9B060;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 34.22%), #9a1538;
+    box-shadow: 0px 3px 1px 0px #935817;
+}
+
+.about-left ul li:last-of-type a {
+    color: #fff;
+    border-radius: 60px;
+    border-bottom: 1px solid #747474;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 34.22%), #1E1E1E;
+    box-shadow: 0px 3px 1px 0px #494949;
+}
+
+.about-btn- h3 {
+    color: #F6CEAA;
+    text-align: center;
+    text-shadow: 3px 0px 0px #000;
+    font-family: Gagalin;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 30px */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* ======our partners area start====== */
+
+.pretners-wrapper {
+    margin-top: 200px;
+}
+
+.pretners-items {
+    text-align: center;
+}
+
+.pretners-items a {
+    border-radius: 80px;
+    border: 4px solid #D8DADA;
+    background: #FFF;
+    box-shadow: 10px 10px 0px 0px #DED7D1;
+    display: block;
+    width: 100%;
+    height: 90px;
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pretners-items a img {
+    /* width: 140px; */
+}
+
+/* ====ca area ==== */
+
+main {
+    overflow: hidden;
+}
+
+.ca-area {
+    padding: 100px 0;
+    position: relative;
+}
+
+.cl-rains-rg {
+    position: absolute;
+    bottom: -230px;
+    right: 0px;
+    z-index: -1;
+}
+
+.ca-address-inner {
+    padding: 66px 70px;
+    border-radius: 80px;
+    border: 4px solid #D8DADA;
+    background: #FFF;
+    box-shadow: 10px 10px 0px 0px #DED7D1;
+    position: relative;
+    overflow: hidden;
+}
+
+.ca-address-inner ul li:first-of-type {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.ca-address-inner ul li:last-of-type {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.ca-address-inner p {
+    color: #000;
+    font-family: "Gagalin";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    /* 28.6px */
+    text-transform: uppercase;
+    margin-bottom: 57px;
+    text-align: center;
+}
+
+.ca-address-inner .buy-btn {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ca-address-inner .buy-btn a {
+    color: #180D00;
+    text-align: center;
+    font-family: Gagalin;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 24px */
+    text-transform: uppercase;
+    padding: 25px 47px;
+    display: inline-block;
+    border-radius: 60px;
+    border-bottom: 1px solid #F9B060;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 34.22%), #9a1538;
+    box-shadow: 0px 3px 1px 0px #935817;
+}
+
+/* =========Tokenomics area start ========*/
+
+.tokenomics-area {
+    padding: 100px 0;
+}
+
+.tokenomics-inner {
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 80px;
+    border: 4px solid #D8DADA;
+    background: #FFF;
+    box-shadow: 10px 10px 0px 0px #DED7D1;
+    padding: 60px;
+}
+
+.tokenomics-inner {}
+
+.Tokenomics-left {
+    width: 403px;
+    height: 403px;
+    flex-shrink: 0;
+    border-radius: 403px;
+    background: #9a1538;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Tokenomics-left h2 {
+    color: #180C00;
+    text-align: center;
+    font-family: Gagalin;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 81px */
+    text-transform: uppercase;
+}
+
+.Tokenomics-left p {
+    color: #180C00;
+    font-family: "Gagalin";
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+}
+
+.Tokenomics-right {
+    text-align: center;
+}
+
+.Tokenomics-right span {
+    color: #180C00;
+    text-align: center;
+    font-family: Gagalin;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 43.5px */
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 26px 45px;
+    border-radius: 20px 20px 0 0;
+    background: #9a1538;
+}
+
+.Tokenomics-right ul li {
+    color: #180C00;
+    text-align: center;
+    font-family: "Gagalin";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 33px */
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 4px solid #D8DADA;
+    background: #FFF;
+    box-shadow: 10px 10px 0px 0px #DED7D1;
+    padding: 30px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.Tokenomics-right ul li a {
+    color: #180D00;
+    text-align: center;
+    font-family: Gagalin;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 12px */
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 60px;
+    border-bottom: 1px solid #F9B060;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 34.22%), #9a1538;
+    box-shadow: 0px 3px 1px 0px #935817;
+    padding: 13px 30px;
+}
+
+/* =========Our Roadmap start ======== */
+
+.Contact-us-area {
+    padding: 100px 0 160px;
+    position: relative;
+}
+
+.cl-rain {
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+}
+
+.Contact-us-title h2 {
+    color: #004D4C;
+    text-align: center;
+    font-family: Hirosh;
+    font-size: 67px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    /* 73.7px */
+    text-transform: uppercase;
+    margin-bottom: 57px;
+}
+
+.Contact-us-inner {
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 80px;
+    border: 4px solid #D8DADA;
+    background: #FFF;
+    box-shadow: 10px 10px 0px 0px #DED7D1;
+    padding: 90px;
+    text-align: center;
+    z-index: 99;
+    position: relative;
+}
+
+.Contact-us-inner span {
+    color: #000;
+    font-family: Hirosh;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+    display: block;
+}
+
+.Contact-us-inner a {
+    color: #9a1538;
+    font-family: "Manga Temple";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    /* 61.6px */
+    text-transform: uppercase;
+}
+
+/* disclaimer-area */
+
+.disclaimer-area {
+    background-image: url(img/ds-bg.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-top: 92px;
+}
+
+.disclaimer-text {
+    padding: 42px 62px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #9a1538;
+    margin-bottom: 55px;
+}
+
+.disclaimer-text h2 {
+    color: #180C00;
+    font-family: Gagalin;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.disclaimer-text p {
+    color: #180C00;
+    font-family: "Gagalin";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* ========footer======== */
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+/* end all the css  */
+
+/* ========== */
